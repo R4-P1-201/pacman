@@ -1,6 +1,14 @@
+"""
+Equipo 3:
+Andrea Catalina Fernández Mena          A01197705
+Roberto Abraham Pérez Iga               A01384237
+Alan Isaac Garcia De Leon               A01383111
+"""
+
 from random import choice
 from turtle import *
 from freegames import floor, vector
+import sys  #Controlar la terminal
 
 state = {'score': 0}
 path = Turtle(visible=False)
@@ -136,9 +144,9 @@ def move():
 
     for point, course in ghosts:
         if abs(pacman - point) < 10:
-            return
+            sys.exit(3000) #Cerrar la ventana de manera más efectiva
 
-    ontimer(move, 100)
+    ontimer(move, 10)
 
 # Se cambia el curso de movimiento de pacman 
 def change(x, y):
